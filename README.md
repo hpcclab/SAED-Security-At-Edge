@@ -12,17 +12,14 @@ Here, we uploaded only the plain-text dataset for simplicity of the usage.
 4. Save the python file. 
 5. Execute it from the terminal. if it needs persmission, please provide that accordingly. 
 6. An output file named as weighted_query_"QUERY"_.txt will be formed. 
-7. This can be fed to the search engine by two ways:
-  A. Provide weights also that could be used in the ranking module directly. If the user do not want to utilize the ranking module of SAED,
-      they can go for this option to accomplish their searches.
-  B. Provide only the weighted query to the default search engine. Next directions are written from 8.
-  
-8. Assume, the search has been accomplished using the extended query. Cloud outputted search result is available now.
-9. Now, Ranking unit will be utilized to rank the search result. 
-10. We have provided a dummy resultant file "demo_initial_result.csv" in the repository.
-11. Download BBC dataset (Demo query is considered from BBC dataset)
-11. Modify the following lines of RankingUnit.py:
+
+Assume, the search has been accomplished using the extended query. Cloud outputted search result is available now.
+Now, Ranking unit will be utilized to rank the search result. 
+
+7. We have provided a dummy resultant file "demo_initial_result.csv" in the repository.
+8. Download BBC dataset (Demo query is considered from BBC dataset). In addition, download link for RFC dataset is also provided. 
+9. Modify the following lines of RankingUnit.py:
     i.  Line 28: provide the query that has been already expanded. (It is already loaded with query "windows operating system") 
     ii. Line 17 and 73: provide the link of downloaded dataset.
     
-11.Execute RankingUnit.py to get the final search result.
+10.Execute RankingUnit.py to get the final search result.
