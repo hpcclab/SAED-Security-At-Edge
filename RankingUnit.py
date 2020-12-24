@@ -14,7 +14,7 @@ import math
 def idf(w,ab):
     cnt=0
     for a in ab:
-        f= open ("/home/XX/Downloads/All_bbc_together/" + a +".txt", "r" )
+        f= open ("./Dataset/All_bbc_together/" + a +".txt", "r" )
         reader=f.readlines()
         lineholder=""
         
@@ -70,7 +70,7 @@ with open("demo_weighted_query.txt","r") as f:
 kendra_score_dict={}
    
 for a in ab:
-    f= open ("/home/XX/Downloads/All_bbc_together/" + a +".txt", "r" )
+    f= open ("./Dataset/All_bbc_together/" + a +".txt", "r" )
     reader=f.readlines()
     lineholder=""
     for line in reader:

@@ -6,7 +6,7 @@ while maintaining privacy of the search on the cloud tier.
  
 ## SAED Running Instructions
 Here, we uploaded only the plain-text dataset for simplicity of the usage.
-1. Download "GoogleNews-vectors-negative300.bin" and save it in the parent folder "SAED-Security-At-Edge"
+1. Download "GoogleNews-vectors-negative300.bin" from [here] (https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit). and save it in the parent folder "SAED-Security-At-Edge"
 2. Open the context_detection_extended.py and input your search query in line, 30.
 3. In the executable file, edit line 145 to acess the "GoogleNews-vectors-negative300.bin" file.
 4. Save the python file. 
