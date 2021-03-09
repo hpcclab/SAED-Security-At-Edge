@@ -15,7 +15,7 @@ while maintaining privacy of the search on the cloud tier.
 }
  ````
 ## Architecture
-<p align="center"><img src="archi.pdf"></p>
+<p align="center"><img src="archi.png"></p>
 
 ## SAED Running Instructions
 Here, we uploaded only the plain-text dataset for simplicity of the usage.
