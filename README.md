@@ -1,12 +1,25 @@
 # SAED-Security-At-Edge
-SAED is a edge-based platform that enables smart and personalized semantic Enterprise Search service on the cloud
+SAED is a edge-based platform that enables smart and personalized semantic Enterprise Search service on the cloud.
 ## Introduction
 This is an open-source program that offers intelligence in the form of semantic and personalized search at the edge tier
 while maintaining privacy of the search on the cloud tier. 
  
+ ````
+ @inproceedings{zobaedsaed2021,
+  title={SAED: Edge-Based Intelligence for Privacy-Preserving Enterprise Search on the Cloud},
+  author={Woodworth, Jason and Salehi, Mohsen Amini and Raghavan, Vijay},
+  booktitle={Proceedings of the 20th International Symposium on Cluster, Cloud, and Grid Computing},
+  series={CCGRID'20},
+  year={2021},
+  month={May}
+}
+ ````
+## Architecture
+<p align="center"><img src="archi.pdf"></p>
+
 ## SAED Running Instructions
 Here, we uploaded only the plain-text dataset for simplicity of the usage.
-1. Download "GoogleNews-vectors-negative300.bin" from [here] (https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit). and save it in the parent folder "SAED-Security-At-Edge"
+1. Download "GoogleNews-vectors-negative300.bin" from [here](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit). and save it in the parent folder "SAED-Security-At-Edge"
 2. Open the context_detection_extended.py and input your search query in line, 30.
 3. In the executable file, edit line 145 to acess the "GoogleNews-vectors-negative300.bin" file.
 4. Save the python file. 
