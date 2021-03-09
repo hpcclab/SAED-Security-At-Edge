@@ -3,7 +3,10 @@ SAED is a edge-based platform that enables smart and personalized semantic Enter
 ## Introduction
 This is an open-source program that offers intelligence in the form of semantic and personalized search at the edge tier
 while maintaining privacy of the search on the cloud tier. 
- 
+
+The paper is also available in the following address:
+https://ui.adsabs.harvard.edu/abs/2021arXiv210213367S/abstract
+
  ````
  @inproceedings{zobaedsaed2021,
   title={SAED: Edge-Based Intelligence for Privacy-Preserving Enterprise Search on the Cloud},
@@ -14,9 +17,11 @@ while maintaining privacy of the search on the cloud tier.
   month={May}
 }
  ````
+ The paper is also available in the following address:
+ 
 ## Architecture
 <p align="center"><img src="archi.png"></p>
-
+Architectural overview of the SAED system within edge tier and as part of the three-tier enterprise search service. SAED provides semantic search via identifying the query context and combining that with the user’s interests. Then, Query Expansion and Weighting unit of SAED, respectively, incorporate the semantic and assure the relevancy of the results. Solid and dashed lines indicate the interactions from user to the cloud tier and from the cloud tier to the user respectively.
 ## SAED Running Instructions
 Here, we uploaded only the plain-text dataset for simplicity of the usage.
 1. Download "GoogleNews-vectors-negative300.bin" from [here](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit). and save it in the parent folder "SAED-Security-At-Edge"
