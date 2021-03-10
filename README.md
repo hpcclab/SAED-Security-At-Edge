@@ -1,23 +1,22 @@
 # SAED-Security-At-Edge
-SAED is an edge-based platform that enables smart and privacy-preserving semantic Enterprise Search service on the cloud. SAED can be plugged in to any enterprise search solution (e.g., AWS Kendra). 
-## Introduction
-This is an open-source program that offers intelligence in the form of semantic and personalized search at the edge tier
-while maintaining privacy of the search on the cloud tier. 
+SAED is an edge-based platform that offers intelligence in the form of privacy-preserving semantic and personalized search at the edge tier to augment the capabilities of the Enterprise Search services on the cloud. SAED can be plugged in to any cloud-based enterprise search solution (e.g., AWS Kendra) and extend their smartness and privacy wihtout enforcing any change on them. SAED is the first platform that develops the idea of **logical partitioning of applications across edge-to-cloud continuum** in the context of a privacy-preserving search application. In particular, to preserve the user's privacy, SAED decouples the intelligence aspect of the semantic search algorithm (and performs it on a trusted edge tier) from its pattern matching aspect (that is performed on the untrusted public cloud tier).
 
-The paper is also available in the following address:
+## Availability
+SAED is an open-source program that was developed at HPCC lab, University of Louisiana Lafayette. Details of its theory, implementation, and evaluation have been published in 21st IEEE/ACM International Symposium on Cluster, Cloud, and Grid Computing (CCGrid 2021) in Melbourne, Australia. 
+The research paper is also available on the arXiv repository:
 https://arxiv.org/abs/2102.13367
 
+Users of this open-source platform are requested to cite the following paper in their publications:
  ````
  @inproceedings{zobaedsaed2021,
   title={SAED: Edge-Based Intelligence for Privacy-Preserving Enterprise Search on the Cloud},
-  author={Woodworth, Jason and Salehi, Mohsen Amini and Raghavan, Vijay},
-  booktitle={Proceedings of the 20th International Symposium on Cluster, Cloud, and Grid Computing},
-  series={CCGRID'20},
+  author={Zobaed, Sakib M, and Amini Salehi, Mohsen and Buyya, Rajkumar}
+  booktitle={Proceedings of the 21st International Symposium on Cluster, Cloud, and Grid Computing},
+  series={CCGRID'21},
   year={2021},
   month={May}
 }
  ````
- The paper is also available in the following address:
  
 ## Architecture
 <p align="center"><img src="archi.png"></p>
