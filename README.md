@@ -29,7 +29,7 @@ Here, we uploaded only the plain-text dataset for simplicity of the usage.
 1. Clone this project in your machine via git clone.
 2. Download "GoogleNews-vectors-negative300.bin" from [here](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit) and save it in the "SAED-Security-At-Edge" folder.
 3. Run context_detection_extended.py and input your search query as a parameter. If it needs execution persmission, please provide that accordingly. 
-   i. Example: ```chmod a+x context_detection_extended.py``` 
+   1. Example: ```chmod a+x context_detection_extended.py``` 
                ```python3 context_detection_extended.py INPUT_QUERY```
 8. An output file named as weighted_query_"QUERY"_.txt will be formed. 
 
