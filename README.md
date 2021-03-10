@@ -19,11 +19,14 @@ Users of this open-source platform are requested to cite the following paper in 
  ````
  
 ## Architecture
+
 Architectural overview of the SAED system within edge tier and as part of the three-tier enterprise search service is hown below. SAED provides semantic search via identifying the query context and combining that with the user’s interests. Then, Query Expansion and Weighting unit of SAED, respectively, incorporate the semantic and assure the relevancy of the results. Solid and dashed lines indicate the interactions from user to the cloud tier and from the cloud tier to the user respectively.
 <p align="center"><img src="archi.png"></p>
+
 ## SAED Running Instructions
+
 Here, we uploaded only the plain-text dataset for simplicity of the usage.
-1. Download "GoogleNews-vectors-negative300.bin" from [here](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit). and save it in the parent folder "SAED-Security-At-Edge".
+1. Download "GoogleNews-vectors-negative300.bin" from [here] (https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit). and save it in the parent folder "SAED-Security-At-Edge".
 2. Open the context_detection_extended.py and input your search query in line, 30.
 3. In the executable file, edit line 145 to acess the "GoogleNews-vectors-negative300.bin" file.
 4. Save the python file. 
