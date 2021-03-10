@@ -1,5 +1,5 @@
 # SAED-Security-At-Edge
-SAED is a edge-based platform that enables smart and personalized semantic Enterprise Search service on the cloud.
+SAED is an edge-based platform that enables smart and personalized semantic Enterprise Search service on the cloud.
 ## Introduction
 This is an open-source program that offers intelligence in the form of semantic and personalized search at the edge tier
 while maintaining privacy of the search on the cloud tier. 
