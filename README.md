@@ -26,12 +26,12 @@ Architectural overview of the SAED system within edge tier and as part of the th
 ## SAED Running Instructions
 
 Here, we uploaded only the plain-text dataset for simplicity of the usage.
-1. Download "GoogleNews-vectors-negative300.bin" from [here](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit). and save it in the parent folder "SAED-Security-At-Edge".
-2. Open the context_detection_extended.py and input your search query in line, 30.
-3. In the executable file, edit line 145 to acess the "GoogleNews-vectors-negative300.bin" file.
-4. Save the python file. 
-5. Execute it from the terminal. if it needs persmission, please provide that accordingly. 
-6. An output file named as weighted_query_"QUERY"_.txt will be formed. 
+1. Clone this project in your machine via git clone.
+2. Download "GoogleNews-vectors-negative300.bin" from [here](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit) and save it in the "SAED-Security-At-Edge" folder.
+3. Run context_detection_extended.py and input your search query as a parameter. If it needs execution persmission, please provide that accordingly. 
+   i. Example: ```chmod a+x context_detection_extended.py``` 
+               ```python3 context_detection_extended.py INPUT_QUERY```
+8. An output file named as weighted_query_"QUERY"_.txt will be formed. 
 
 Assume, the search has been accomplished using the extended query. Cloud outputted search result is available now.
 Now, Ranking unit will be utilized to rank the search result. 
