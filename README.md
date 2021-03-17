@@ -27,19 +27,18 @@ Architectural overview of the SAED system within edge tier and as part of the th
 
 Here, we uploaded only the plain-text dataset for simplicity of the usage.
 1. Clone this project in your machine via git clone.
-2. Download "GoogleNews-vectors-negative300.bin" from [here](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit) and save it in the "SAED-Security-At-Edge" folder.
-3. Run context_detection_extended.py and input your search query as a parameter. If it needs execution persmission, please provide that accordingly. 
+2. Download pre-trained "GoogleNews-vectors-negative300.bin" W2V model from [here](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit).
+3. Download ```BBC``` dataset (Demo query is considered from BBC dataset). In addition, download link for RFC dataset is also provided.
+4. Open ```config.csv file``` to provide dataset name (BBC/RFC), W2V model location, AWS region, access key id, secret access key, kendra index id. We have already loaded a demo query and user interest, and initial ranking file.     
+5. Run ```context_detection_extended.py```. If it needs execution persmission, please provide that accordingly. 
    1. Example: ```chmod a+x context_detection_extended.py``` 
-               ```python3 context_detection_extended.py INPUT_QUERY```
-8. An output file named as weighted_query_"QUERY"_.txt will be formed. 
-
-Assume, the search has been accomplished using the extended query. Cloud outputted search result is available now.
-Now, Ranking unit will be utilized to rank the search result. 
-
-7. We have provided a dummy resultant file "demo_initial_result.csv" in the repository.
-8. Download BBC dataset (Demo query is considered from BBC dataset). In addition, download link for RFC dataset is also provided. 
-9. Modify the following lines of RankingUnit.py:
-    i.  Line 28: provide the query that has been already expanded. (It is already loaded with query "windows operating system") 
-    ii. Line 17 and 73: provide the link of downloaded dataset.
-    
-10.Execute RankingUnit.py to get the final search result.
+               ```python3 context_detection_extended.py```
+6. An output file named as ```weighted_query_"QUERY"_.txt``` will be formed. 
+7. Update ```config.csv``` file with the newly generated weighted query file. Note that, we have already provided a demo file based on the demo query and interest.
+8. We have provided an interface to facilitate search through AWS Kendra. Run ```Search_through_kendra.py```. If it needs execution persmission, please provide that accordingly. Before running the file, please check ```config.csv``` again and make sure that AWS related information have been provided correctly. 
+   1. Example: ```chmod a+x Search_through_kendra.py```
+   2. ```python3 Search_through_kendra.py```      
+9. After running the file, Cloud (AWS Kendra) outputted search result is saved in ```initial_ranking.csv``` file.
+10. Now, Ranking unit will be utilized to get the final search result. Run ```RankingUnit.py```. If it needs execution persmission, please provide that accordingly. 
+   1. Example: ```chmod a+x RankingUnit.py```
+11. The final search result will be shown in the terminal. 
