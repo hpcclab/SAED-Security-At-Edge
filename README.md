@@ -20,7 +20,7 @@ Users of this open-source platform are requested to cite the following paper in 
  
 ## Architecture
 
-Architectural overview of the SAED system within edge tier and as part of the three-tier enterprise search service is hown below. SAED provides semantic search via identifying the query context and combining that with the user’s interests. Then, Query Expansion and Weighting unit of SAED, respectively, incorporate the semantic and assure the relevancy of the results. Solid and dashed lines indicate the interactions from user to the cloud tier and from the cloud tier to the user respectively.
+Architectural overview of SAED within the edge tier and (as part of the three-tier enterprise search service) is shown below. SAED provides semantic search via identifying the query context (Context Identifier module) and combining that with the user’s interests (Interest Detector module). Then, the Query Expansion module and the Weighting unit of SAED, respectively, incorporate the semantic and assure the relevancy of the results. Solid and dashed lines indicate the interactions from the user to the cloud tier and from the cloud tier to the user, respectively.
 <p align="center"><img src="archi.png"></p>
 
 ## SAED Running Instructions
