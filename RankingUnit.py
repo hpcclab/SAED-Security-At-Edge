@@ -9,12 +9,14 @@ Created on Sun Jul 19 21:50:53 2020
 import sys
 import pandas as pd 
 import math
+df=pd.read_csv('config.csv',header=None)
 
+dataset=df.iloc[1][1]
 
 def idf(w,ab):
     cnt=0
     for a in ab:
-        f= open ("./Dataset/All_bbc_together/" + a +".txt", "r" )
+        f= open ("./Dataset/"+dataset+"/" + a +".txt", "r" )
         reader=f.readlines()
         lineholder=""
         
@@ -25,9 +27,10 @@ def idf(w,ab):
             cnt+=1
     return math.log2(len(ab)/(cnt+1))  
     
-sent="opera in vienna" #Demo query. Demo files are obtained based on this query.
+query= df.iloc[0][1] #Demo query. Demo files are obtained based on this query.
 
-f=open("demo_inital_result.csv", "r") # res will be created by the union of the resultant files from the expanded query set
+initial_ranking_file=df.iloc[8][1]
+f=open(initial_ranking_file, "r") # res will be created by the union of the resultant files from the expanded query set
 a=f.readlines()
 f.close()
 
@@ -49,7 +52,7 @@ ab=ab[:ab.index('')]
 
 kendra_mama=[]
 
-with open("demo_weighted_query.txt","r") as f:
+with open("Weighted_query_internet.txt","r") as f:
     af=f.readlines()
     for i in af:
         kendra_mama.append(i[:i.index(":")])
@@ -57,7 +60,7 @@ with open("demo_weighted_query.txt","r") as f:
 
 my_result_from_new_research={}
 
-with open("demo_weighted_query.txt","r") as f:
+with open("Weighted_query_internet.txt","r") as f:
     ax=f.readlines()
     for a in ax:
         a=a.replace("\n", "")
@@ -70,7 +73,7 @@ with open("demo_weighted_query.txt","r") as f:
 kendra_score_dict={}
    
 for a in ab:
-    f= open ("./Dataset/All_bbc_together/" + a +".txt", "r" )
+    f= open ("./Dataset/"+dataset+"/" + a +".txt", "r" )
     reader=f.readlines()
     lineholder=""
     for line in reader:

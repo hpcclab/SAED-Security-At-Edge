@@ -1,0 +1,12 @@
+internet: 1
+cyberspace: 0.20328793
+tcp: 0.1
+exchange: 0.1
+network: 0.1
+computer: 0.1
+consisting: 0.1
+worldwide: 0.1
+protocols: 0.1
+facilitate: 0.1
+data: 0.1
+transmission: 0.1

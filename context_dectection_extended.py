@@ -23,13 +23,16 @@ from pywsd.lesk import simple_lesk
 from nltk.corpus import wordnet
 import yake
 import numpy as np
+import pandas as pd
 import os
 import sys
 import enchant
-engcheker=enchant.Dict("en_US")
-query = "opera in vienna"
-stop_words = set(stopwords.words('english')) 
 
+
+engcheker=enchant.Dict("en_US")
+df=pd.read_csv('config.csv',header=None)
+query = df.iloc[0][1]
+stop_words = set(stopwords.words('english')) 
 sent=query
 full_token_query=[]
 for r in sent.lower().split(" "): 
@@ -95,12 +98,6 @@ for i in range(len(imp_key)):
 Weight Distribution 
 '''
 
-
-
-
-'''
-Only query words will be here.
-'''
 context=[]
 context=imp_key_from_definition
 
@@ -134,15 +131,15 @@ weighted_keywords[sent]=1
 
 '''
 i have segregarted dict word and non dict word. I have weighted non dict word as 1. I need to calculate weight for dict words..
-Then the weighting part will be done.. Oh, I need to calculate weight based on user's next search. 
+Then the weighting part will be done..  I need to calculate weight based on user's next search. 
 
 '''
 
 weighted_dict={}
 
-search_interest="technology"
+search_interest=df.iloc[7][1].lower()
 import gensim 
-model = gensim.models.KeyedVectors.load_word2vec_format('/home/zobaed/Downloads/GoogleNews-vectors-negative300.bin', binary=True)
+model = gensim.models.KeyedVectors.load_word2vec_format(df.iloc[2][1], binary=True)
 
 
 
@@ -199,27 +196,6 @@ for key,li in purified_synonyms_dict.items():
 #####
 
 
-    
-'''  
-
-all_purified_together=[]
-for key, ll in purified_synonyms_dict.items():
-
-    
-    for l in ll:
-        all_purified_together.append(l)
-
-
-all_purified_together_extended_query_weight={}
-
-j=0
-for i,val in weight_expanded_query.items():
-    for v in val:
-        all_purified_together_extended_query_weight[all_purified_together[j]]=v
-        j+=1
-      
-'''
-
 combined_dict={}
 combined_dict_temp={}
 #combined_dict_temp = {**weighted_keywords, **all_purified_together_extended_query_weight}
@@ -263,19 +239,3 @@ for i in acc:
     f.write("\n")
 
 f.close()
-
-
-'''
-combined_words=[]
-combined_weight=[]
-for key, l in combined_dict.items():
-    combined_words.append(key)
-    combined_weight.append(l)  
-      
-with open("/home/zobaed/Desktop/new_research/weighted query BBC/kendra/"+"kendra_equery_" +sent+ ".txt","w") as f:
-    for word in combined_words:
-        f.write(word)
-        f.write("\n")
-    f.close()
-        
-'''
