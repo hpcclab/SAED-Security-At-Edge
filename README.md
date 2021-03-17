@@ -25,10 +25,10 @@ Architectural overview of SAED within the edge tier and (as part of the three-ti
 
 ## SAED Running Instructions on AWS Kendra
 1. Clone the project on your machine via git clone.
-2. Run ```prereq.sh``` to install all dependencies (Make sure ```python3``` is intalled). 
+2. Run ```prereq.sh``` to install all dependencies (Make sure ```python3``` is intalled and default OS is Linux). 
 3. Download pre-trained "GoogleNews-vectors-negative300.bin" W2V model from [here](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit).
 4. ```BBC``` dataset is available in zipped format in Dataset folder (demo query is considered from ```BBC``` dataset). In addition, the link for downloading RFC dataset is provided in ```Link for downloading RFC dataset.txt```. Note: here, we uploaded only the plain-text dataset for simplicity of the usage.
-5. Upload data in AWS storage (S3) and ... config Kendra .. document LINK XXXX
+5. Upload data in AWS storage (S3) and ... config Kendra .. document LINK XXXX. Note: You need to copy the Kendra index id from AWS to the ```config.ini``` file as explained in the next step.  
 6. Open ```config.csv``` file to provide the dataset name (BBC/RFC), W2V model location, AWS region, access key id, secret access key, and Kendra index id. We have already provided a demo query and user interest.     
 7. Run ```context_detection_extended.py```. If it needs execution persmission, please provide that accordingly. Example: 
    1. ```chmod a+x context_detection_extended.py``` then,
@@ -43,7 +43,8 @@ Architectural overview of SAED within the edge tier and (as part of the three-ti
    1. ```chmod a+x RankingUnit.py```
    2. ```python3 RankingUnit.py```
 13. The final search result will be shown in the terminal. 
-
+### Run SAED all-in-one 
+The above instructions are provided for step-by-step execution of SAED based on the provided architecture. However, if you want to run the whole thing in one step, after Step 6, just run ```./saed_all.sh```.    
 ## SAED Running Instructions in the emulation mode (Without the need to configure AWS Kendra)
 If you do not have an AWS account, you can simply run SAED in the emulation mode for some prepared retrieved results. This is assuming that you have a resulted document set provided by a search system (e.g., AWS Kendra) for a given search query. The search query is loaded in ```config.ini``` file as a default. To run SAED in the emulation mode, after Step 2 in the previous section, do the following steps:
 1. Chec XXX
