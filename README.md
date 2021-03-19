@@ -24,6 +24,14 @@ Architectural overview of SAED within the edge tier and (as part of the three-ti
 <p align="center"><img src="archi.png"></p>
 
 ## SAED Running Instructions on AWS Kendra
+### Dependencies
+```python2.7```
+```lxml==4.2.1```
+```tensorflow_gpu==1.6.0```
+```numpy==1.14.2```
+```nltk==3.2.5```
+```beautifulsoup4==4.6.0```
+
 1. Clone the project on your machine via git clone.
 2. Run ```prereq.sh``` to install all dependencies (Make sure ```python3``` is intalled and default OS is Linux). 
 3. Download pre-trained "GoogleNews-vectors-negative300.bin" W2V model from [here](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit).
