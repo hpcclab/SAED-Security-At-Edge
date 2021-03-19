@@ -1,2 +1,0 @@
-1. context detection extended
-weighted query in the parent folder.
