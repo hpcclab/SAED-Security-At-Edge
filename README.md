@@ -50,8 +50,8 @@ To install all the dependencies all at once, command: ```pip install -r requirem
    2. ```python3 Search_through_kendra.py```      
 11. After running the file, Cloud (AWS Kendra) outputted search result is saved in ```initial_ranking.csv``` file.
 12. Now, Ranking unit will be utilized to get the final search result. Run ```RankingUnit.py```. If it needs execution persmission, please provide that accordingly. Example: 
-   1.```chmod a+x RankingUnit.py``` then,
-   2. ```python3 RankingUnit.py```
+  1.```chmod a+x RankingUnit.py``` then,
+  2. ```python3 RankingUnit.py```
 13. The final search result will be shown in the terminal. 
 ### Run SAED all-in-one 
 The above instructions are provided for step-by-step execution of SAED based on the provided architecture. However, if you want to run the whole thing in one step, after Step 6, just run ```./saed_all.sh```.    
