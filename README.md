@@ -50,15 +50,14 @@ To install all the dependencies all at once, command: ```pip install -r requirem
    2. ```python3 Search_through_kendra.py```      
 11. After running the file, Cloud (AWS Kendra) outputted search result is saved in ```initial_ranking.csv``` file.
 12. Now, Ranking unit will be utilized to get the final search result. Run ```RankingUnit.py```. If it needs execution persmission, please provide that accordingly. Example: 
-   1. ```chmod a+x RankingUnit.py```
+   1.```chmod a+x RankingUnit.py``` then,
    2. ```python3 RankingUnit.py```
 13. The final search result will be shown in the terminal. 
 ### Run SAED all-in-one 
 The above instructions are provided for step-by-step execution of SAED based on the provided architecture. However, if you want to run the whole thing in one step, after Step 6, just run ```./saed_all.sh```.    
 ## SAED Running Instructions in the emulation mode (Without the need to configure AWS Kendra)
 If you do not have an AWS account, you can simply run SAED in the emulation mode for some prepared retrieved results. This is assuming that you have a resulted document set provided by a search system (e.g., AWS Kendra) for a given search query. A dummy output obtained from Kendra is provided in ```demo_initial_ranking.csv``` file. The search query is loaded in ```config.ini``` file as a default. To run SAED in the emulation mode, after Step 2 in the previous section, do the following steps:
-1. Check 
-2. Run ```RankingUnit.py```. If it needs execution persmission, please provide that accordingly. Example: 
-   1. ```chmod a+x RankingUnit.py```
+1. Run ```RankingUnit.py```. If it needs execution persmission, please provide that accordingly. Example: 
+   1. ```chmod a+x RankingUnit.py``` then,
    2. ```python3 RankingUnit.py``
-3. The final search result will be shown in the terminal.
+2. The final search result will be shown in the terminal.
