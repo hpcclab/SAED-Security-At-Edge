@@ -24,15 +24,15 @@ from nltk.corpus import wordnet
 import gensim
 import yake
 import numpy as np
-import pandas as pd
 import os
 import sys
 import enchant
-
+import configparser
 
 engcheker=enchant.Dict("en_US")
-df=pd.read_csv('config.csv',header=None)
-query = df.iloc[0][1]
+config = configparser.ConfigParser()
+config.read('config.ini')
+query = config['DEFAULT']['query']
 stop_words = set(stopwords.words('english')) 
 sent=query
 full_token_query=[]
@@ -138,9 +138,9 @@ Then the weighting part will be done..  I need to calculate weight based on user
 
 weighted_dict={}
 
-search_interest=df.iloc[7][1].lower()
+search_interest=query = config['DEFAULT']['interest']
  
-model = gensim.models.KeyedVectors.load_word2vec_format(df.iloc[2][1], binary=True)
+model = gensim.models.KeyedVectors.load_word2vec_format(config['DEFAULT']['google_news_link'], binary=True)
 
 
 

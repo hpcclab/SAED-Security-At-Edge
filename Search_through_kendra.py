@@ -1,32 +1,33 @@
 import boto3
 import pprint
-import pandas as pd
 from botocore.config import Config
+import configparser
 
-df=pd.read_csv('config.csv',header=None)
+config = configparser.ConfigParser()
+config.read('config.ini')
 
 
 my_config = Config(
-    region_name = df.iloc[3][1]
+    region_name = config['AWS link up']['region_name']
 )
 
 kendra = boto3.client('kendra', config=my_config,
-                      aws_access_key_id=df.iloc[4][1],
-                      aws_secret_access_key=df.iloc[5][1]                     
+                      aws_access_key_id=config['AWS link up']['aws_access_key_id'],
+                      aws_secret_access_key=config['AWS link up']['aws_secret_access_key']                   
                       )
 
 
-fi= open ("Weighted_query_internet.txt", 'r')
+fi= open (config['DEFAULT']['Weighted_query'], 'r')
 all_wq=fi.readlines()
 all_filtered_w_q=[]
 for i in all_wq:
     all_filtered_w_q.append(i[:i.index(":")]) 
 
 
-with open("initial_ranking.csv", 'w') as fii:    
+with open(config['DEFAULT']['initial_ranking_file'], 'w') as fii:    
     for query in all_filtered_w_q:
     
-        index_id=df[1][6]
+        index_id=config['AWS link up']['amazon_index_id']
     
         response=kendra.query(
                 QueryText = query,

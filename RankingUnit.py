@@ -9,9 +9,11 @@ Created on Sun Jul 19 21:50:53 2020
 import sys
 import pandas as pd 
 import math
-df=pd.read_csv('config.csv',header=None)
+import configparser
+config = configparser.ConfigParser()
+config.read('config.ini')
 
-dataset=df.iloc[1][1]
+dataset=config['DEFAULT']['dataset']
 
 def idf(w,ab):
     cnt=0
@@ -27,9 +29,9 @@ def idf(w,ab):
             cnt+=1
     return math.log2(len(ab)/(cnt+1))  
     
-query= df.iloc[0][1] #Demo query. Demo files are obtained based on this query.
+query = config['DEFAULT']['query'] #Demo query. Demo files are obtained based on this query.
 
-initial_ranking_file=df.iloc[8][1]
+initial_ranking_file=config['DEFAULT']['initial_ranking_file']
 f=open(initial_ranking_file, "r") # res will be created by the union of the resultant files from the expanded query set
 a=f.readlines()
 f.close()
@@ -52,7 +54,7 @@ ab=ab[:ab.index('')]
 
 kendra_mama=[]
 
-with open("Weighted_query_internet.txt","r") as f:
+with open(config['DEFAULT']['Weighted_query'],"r") as f:
     af=f.readlines()
     for i in af:
         kendra_mama.append(i[:i.index(":")])
@@ -60,7 +62,7 @@ with open("Weighted_query_internet.txt","r") as f:
 
 my_result_from_new_research={}
 
-with open("Weighted_query_internet.txt","r") as f:
+with open(config['DEFAULT']['Weighted_query'],"r") as f:
     ax=f.readlines()
     for a in ax:
         a=a.replace("\n", "")
