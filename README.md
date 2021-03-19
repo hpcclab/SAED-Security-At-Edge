@@ -42,16 +42,16 @@ To install all the dependencies all at once, command: ```pip install -r requirem
 6. Open ```config.ini``` file to provide the dataset name (BBC/RFC), W2V model location, AWS region, access key id, secret access key, and Kendra index id. We have already provided a demo query and user interest.     
 7. Run ```context_detection_extended.py```. If it needs execution persmission, please provide that accordingly. Example: 
    1. ```chmod a+x context_detection_extended.py``` then,
-   2. ```python3 context_detection_extended.py```
+   1. ```python3 context_detection_extended.py```
 8. An output file named as ```weighted_query_"QUERY"_.txt``` will be formed. 
 9. Update ```config.ini``` file with the newly generated weighted query file. Note that, we have already provided a demo file based on the demo query and interest.
 10. We have provided an interface to facilitate search through AWS Kendra. Run ```Search_through_kendra.py```. If it needs execution persmission, please provide that accordingly. Before running the file, please check ```config.ini``` again and make sure that AWS related information have been provided correctly. Example: 
-   1. ```chmod a+x Search_through_kendra.py```
-   2. ```python3 Search_through_kendra.py```      
+    1. ```chmod a+x Search_through_kendra.py```
+    1. ```python3 Search_through_kendra.py```      
 11. After running the file, Cloud (AWS Kendra) outputted search result is saved in ```initial_ranking.csv``` file.
 12. Now, Ranking unit will be utilized to get the final search result. Run ```RankingUnit.py```. If it needs execution persmission, please provide that accordingly. Example: 
-   1. ```chmod a+x RankingUnit.py``` then,
-   2. ```python3 RankingUnit.py```
+    1. ```chmod a+x RankingUnit.py``` then,
+    1. ```python3 RankingUnit.py```
 13. The final search result will be shown in the terminal. 
 ### Run SAED all-in-one 
 The above instructions are provided for step-by-step execution of SAED based on the provided architecture. However, if you want to run the whole thing in one step, after Step 6, just run ```./saed_all.sh```.    
