@@ -31,11 +31,14 @@ Architectural overview of SAED within the edge tier and (as part of the three-ti
  ```numpy==1.14.2```
  ```nltk==3.2.5```
  ```pywsd>=1.2.0```
- ```yake==0.4.6``` 
-To install all the dependencies all at once, command: ```pip install -r requirements.txt```
+ ```yake==0.4.6```
+ ```wn>=0.0.19```
+ ```six>=1.11.0```
+ ```pandas>=0.22.0```
+
 ### Step by step Instructions
 1. Clone the project on your machine via git clone.
-2. Run ```prereq.sh``` to install all dependencies (Make sure ```python3``` is intalled and default OS is Linux). 
+2. To install all the dependencies all at once, run command: ```pip install -r requirements.txt``` (Make sure ```python3``` is intalled and default OS is Linux). 
 3. Download pre-trained "GoogleNews-vectors-negative300.bin" W2V model from [here](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit).
 4. ```BBC``` dataset is available in zipped format in Dataset folder (demo query is considered from ```BBC``` dataset). In addition, the link for downloading RFC dataset is provided in ```Link for downloading RFC dataset.txt```. Note: here, we uploaded only the plain-text dataset for simplicity of the usage.
 5. Upload data in AWS storage (S3). Please check the [documentation](https://docs.aws.amazon.com/redshift/latest/dg/tutorial-loading-data-upload-files.html) for uploading dataset in AWS storage. To configure Kendra, please check the [documentation](https://docs.aws.amazon.com/kendra/latest/dg/setup.html) if necessary. Note: Once you configure Kendra, a search index will be created. You need to copy the Kendra index id from AWS to the ```config.ini``` file as explained in the next step.  
