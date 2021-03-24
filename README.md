@@ -44,10 +44,10 @@ Please refer to #2 to install the dependencies.
 4. ```BBC``` dataset is available in zipped format in Dataset folder (demo query is considered from ```BBC``` dataset). In addition, the link for downloading RFC dataset is provided in ```Link for downloading RFC dataset.txt```. Note: here, we uploaded only the plain-text dataset for simplicity of the usage.
 5. Upload data in AWS storage (S3). Please check the [documentation](https://docs.aws.amazon.com/redshift/latest/dg/tutorial-loading-data-upload-files.html) for uploading dataset in AWS storage. To configure Kendra, please check the [documentation](https://docs.aws.amazon.com/kendra/latest/dg/setup.html) if necessary. Note: Once you configure Kendra, a search index will be created. You need to copy the Kendra index id from AWS to the ```config.ini``` file as explained in the next step.  
 6. Open ```config.ini``` file to provide the dataset name (BBC/RFC), W2V model location, AWS region, access key id, secret access key, and Kendra index id. We have already provided a demo query and user interest.     
-7. Run ```context_detection_extended.py```. If it needs execution persmission, please provide that accordingly. Example: 
-   1. ```chmod a+x context_detection_extended.py``` then,
-   1. ```python3 context_detection_extended.py```
-8. An output file named as ```weighted_query_"QUERY"_.txt``` will be formed. 
+7. Run ```Context_detection_extended.py```. If it needs execution persmission, please provide that accordingly. Example: 
+   1. ```chmod a+x Context_detection_extended.py``` then,
+   1. ```python3 Context_detection_extended.py```
+8. An output file named as ```Weighted_query_"QUERY"_.txt``` will be formed. 
 9. Update ```config.ini``` file with the newly generated weighted query file. Note that, we have already provided a demo file based on the demo query and interest.
 10. We have provided an interface to facilitate search through AWS Kendra. Run ```Search_through_kendra.py```. If it needs execution persmission, please provide that accordingly. Before running the file, please check ```config.ini``` again and make sure that AWS related information have been provided correctly. Example: 
     1. ```chmod a+x Search_through_kendra.py```
