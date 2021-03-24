@@ -35,6 +35,7 @@ Architectural overview of SAED within the edge tier and (as part of the three-ti
  ```wn>=0.0.19```
  ```six>=1.11.0```
  ```pandas>=0.22.0```
+Please refer to #2 to install the dependencies.
 
 ### Step by step Instructions
 1. Clone the project on your machine via git clone.
