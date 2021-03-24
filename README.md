@@ -25,6 +25,7 @@ Architectural overview of SAED within the edge tier and (as part of the three-ti
 
 ## Running SAED on AWS Kendra
 ### Dependencies
+Running SAED needs the following dependencies:
  ```python>=3.5```
  ```pyenchant==3.2.0```
  ```gensim==3.8.3```
@@ -35,7 +36,8 @@ Architectural overview of SAED within the edge tier and (as part of the three-ti
  ```wn>=0.0.19```
  ```six>=1.11.0```
  ```pandas>=0.22.0```
-Please refer to #2 to install the dependencies.
+ 
+Please refer to Step #2 from the below instructions to install the dependencies.
 
 ### Step by step Instructions
 1. Clone the project on your machine via git clone.
